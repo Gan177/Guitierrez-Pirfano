@@ -65,9 +65,23 @@
 
     .navbar-logo {
       display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .navbar-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .navbar-logo-text {
+      display: flex;
       flex-direction: column;
       gap: 1px;
-      text-decoration: none;
     }
 
     .navbar-logo-main {
@@ -421,29 +435,16 @@
       gap: 0.5rem;
     }
 
-    /* Each card has a unique gradient */
-    .card-1 .property-image-inner {
-      background: linear-gradient(135deg, #243258 0%, #1A2744 40%, #B8965A22 100%);
+    .property-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
     }
 
-    .card-2 .property-image-inner {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1A2744 40%, #B8965A33 100%);
-    }
-
-    .card-3 .property-image-inner {
-      background: linear-gradient(135deg, #1c2f1c 0%, #1A2744 40%, #B8965A22 100%);
-    }
-
-    .property-image-icon {
-      font-size: 2.8rem;
-      opacity: 0.35;
-    }
-
-    .property-image-label {
-      font-family: var(--font-serif);
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.1em;
+    .property-card:hover .property-image img {
+      transform: scale(1.04);
     }
 
     .property-badges {
@@ -653,26 +654,16 @@
     .about-image-box {
       width: 100%;
       aspect-ratio: 4/5;
-      background: linear-gradient(160deg, var(--navy) 0%, #243258 60%, rgba(184,150,90,0.15) 100%);
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.75rem;
+      overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
 
-    .about-image-icon {
-      font-size: 4rem;
-      opacity: 0.2;
-    }
-
-    .about-image-text {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.1em;
+    .about-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .about-badge-float {
@@ -1040,8 +1031,11 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="#" class="navbar-logo" aria-label="Inicio">
-      <span class="navbar-logo-main">Gutiérrez y Pírfano</span>
-      <span class="navbar-logo-sub">Inmobiliaria · Madrid</span>
+      <img src="images/logo.png" alt="Gutiérrez y Pírfano" class="navbar-logo-img" />
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-main">Gutiérrez y Pírfano</span>
+        <span class="navbar-logo-sub">Inmobiliaria · Madrid</span>
+      </div>
     </a>
     <ul class="navbar-nav" id="nav-menu">
       <li><a href="#propiedades">Propiedades</a></li>
@@ -1098,10 +1092,7 @@
         <!-- PROPIEDAD 1 -->
         <article class="property-card card-1">
           <div class="property-image">
-            <div class="property-image-inner">
-              <div class="property-image-icon">🏠</div>
-              <div class="property-image-label">Argüelles · Madrid</div>
-            </div>
+            <img src="images/propiedad-duplex.jpg" alt="Dúplex – Calle de Ilustración, 2 – Argüelles, Madrid" loading="lazy" />
             <div class="property-badges">
               <span class="badge badge-navy">Alquiler temporal</span>
             </div>
@@ -1148,10 +1139,7 @@
         <!-- PROPIEDAD 2 -->
         <article class="property-card card-2">
           <div class="property-image">
-            <div class="property-image-inner">
-              <div class="property-image-icon">🏙️</div>
-              <div class="property-image-label">Centro Histórico · Madrid</div>
-            </div>
+            <img src="images/propiedad-atico.jpg" alt="Ático – Calle Mayor, 66 – Palacio, Madrid" loading="lazy" />
             <div class="property-badges">
               <span class="badge badge-red">Rebajado</span>
             </div>
@@ -1205,10 +1193,7 @@
         <!-- PROPIEDAD 3 -->
         <article class="property-card card-3">
           <div class="property-image">
-            <div class="property-image-inner">
-              <div class="property-image-icon">🏊</div>
-              <div class="property-image-label">Marbella House · Marbella</div>
-            </div>
+            <img src="images/propiedad-marbella.jpg" alt="Ático-tríplex con piscina – Marbella House, Marbella" loading="lazy" />
             <div class="property-badges">
               <span class="badge badge-gold">Lujo</span>
               <span class="badge badge-navy">Alquiler temporal</span>
@@ -1264,8 +1249,7 @@
     <div class="about-inner">
       <div class="about-visual">
         <div class="about-image-box">
-          <div class="about-image-icon">🏛️</div>
-          <div class="about-image-text">Madrid Histórico</div>
+          <img src="images/propiedad-atico.jpg" alt="Terraza en el Madrid histórico" />
         </div>
         <div class="about-badge-float">
           <span class="about-badge-number">15+</span>
