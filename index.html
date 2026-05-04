@@ -16,24 +16,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #B8965A;
-      --gold-light: #D4AF7A;
-      --gold-dark: #8E6E38;
-      --navy: #1A2744;
-      --navy-light: #243258;
-      --off-white: #F8F6F1;
+      --gold: #C09A52;
+      --gold-light: #D9B87A;
+      --gold-dark: #8F6E30;
+      --green: #14321E;
+      --green-light: #1C4228;
+      --green-mid: #1A3A24;
+      --off-white: #F5F0E8;
       --white: #FFFFFF;
-      --gray-100: #F4F2ED;
-      --gray-200: #E8E4DC;
-      --gray-400: #9A9388;
-      --gray-600: #5C5650;
-      --gray-800: #2E2B26;
+      --gray-100: #EDE8DD;
+      --gray-200: #DDD8CC;
+      --gray-400: #9A9080;
+      --gray-600: #5A5248;
+      --gray-800: #2A2620;
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
-      --radius: 4px;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.16), 0 6px 16px rgba(0,0,0,0.09);
+      --radius: 6px;
       --transition: 0.25s ease;
     }
 
@@ -57,9 +58,9 @@
       justify-content: space-between;
       padding: 0 5%;
       height: 72px;
-      background: rgba(26, 39, 68, 0.96);
+      background: rgba(20, 50, 30, 0.96);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(184, 150, 90, 0.25);
+      border-bottom: 1px solid rgba(192, 154, 82, 0.30);
       transition: background var(--transition);
     }
 
@@ -76,6 +77,8 @@
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
+      border: 1.5px solid rgba(192,154,82,0.45);
+      box-shadow: 0 0 0 2px rgba(192,154,82,0.12);
     }
 
     .navbar-logo-text {
@@ -124,7 +127,7 @@
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--gold) !important;
-      border: 1px solid rgba(184,150,90,0.5) !important;
+      border: 1px solid rgba(192,154,82,0.5) !important;
       padding: 0.45rem 1.1rem !important;
       border-radius: 2px;
       letter-spacing: 0.14em !important;
@@ -133,7 +136,7 @@
 
     .navbar-cta:hover {
       background: var(--gold) !important;
-      color: var(--navy) !important;
+      color: var(--green) !important;
     }
 
     .hamburger {
@@ -162,7 +165,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: var(--navy);
+      background: var(--green);
     }
 
     .hero-bg {
@@ -190,8 +193,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.60) 60%, rgba(26,39,68,0.30) 100%),
-        linear-gradient(to bottom, rgba(26,39,68,0.4) 0%, transparent 40%, rgba(26,39,68,0.6) 100%);
+        linear-gradient(105deg, rgba(20,50,30,0.94) 0%, rgba(20,50,30,0.72) 50%, rgba(20,50,30,0.25) 100%),
+        linear-gradient(to bottom, rgba(20,50,30,0.35) 0%, transparent 45%, rgba(20,50,30,0.55) 100%);
     }
 
     .hero-pattern {
@@ -264,23 +267,25 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
       font-family: var(--font-sans);
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 0.9rem 2rem;
+      padding: 0.95rem 2.2rem;
       border: none;
-      border-radius: 2px;
+      border-radius: var(--radius);
       cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
+      box-shadow: 0 2px 12px rgba(192,154,82,0.30);
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
     }
 
     .btn-primary:hover {
       background: var(--gold-light);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192,154,82,0.40);
     }
 
     .btn-outline {
@@ -348,8 +353,8 @@
 
     /* ── STATS BAR ── */
     .stats-bar {
-      background: var(--navy);
-      border-bottom: 1px solid rgba(184,150,90,0.2);
+      background: var(--green);
+      border-bottom: 1px solid rgba(192,154,82,0.2);
       padding: 0 5%;
     }
 
@@ -368,7 +373,7 @@
       justify-content: center;
       padding: 1.4rem 1rem;
       flex: 1;
-      border-right: 1px solid rgba(184,150,90,0.12);
+      border-right: 1px solid rgba(192,154,82,0.12);
       gap: 0.2rem;
     }
 
@@ -440,9 +445,23 @@
       font-family: var(--font-serif);
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 600;
-      color: var(--navy);
+      color: var(--green);
       line-height: 1.25;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      margin: 0.9rem auto 0;
+      border-radius: 2px;
+    }
+
+    .about-content .section-header::after {
+      margin-left: 0;
     }
 
     .section-subtitle {
@@ -456,7 +475,7 @@
 
     /* ── PROPERTIES ── */
     #propiedades {
-      background: var(--off-white);
+      background: var(--white);
       padding: 6rem 5%;
     }
 
@@ -473,21 +492,23 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow-md);
-      transition: box-shadow var(--transition), transform var(--transition);
+      border: 1px solid var(--gray-200);
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
       display: flex;
       flex-direction: column;
     }
 
     .property-card:hover {
       box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      border-color: rgba(192,154,82,0.35);
     }
 
     .property-image {
       position: relative;
       height: 260px;
       overflow: hidden;
-      background: var(--navy);
+      background: var(--green);
     }
 
     .property-image-inner {
@@ -532,13 +553,13 @@
 
     .badge-gold {
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
     }
 
     .badge-navy {
-      background: var(--navy);
+      background: var(--green);
       color: var(--white);
-      border: 1px solid rgba(184,150,90,0.4);
+      border: 1px solid rgba(192,154,82,0.4);
     }
 
     .badge-red {
@@ -550,8 +571,8 @@
       position: absolute;
       bottom: 1rem;
       right: 1rem;
-      background: rgba(26,39,68,0.92);
-      border: 1px solid rgba(184,150,90,0.4);
+      background: rgba(20,50,30,0.92);
+      border: 1px solid rgba(192,154,82,0.4);
       border-radius: 2px;
       padding: 0.4rem 0.9rem;
       text-align: right;
@@ -594,7 +615,7 @@
       font-family: var(--font-serif);
       font-size: 1.1rem;
       font-weight: 500;
-      color: var(--navy);
+      color: var(--green);
       line-height: 1.3;
     }
 
@@ -642,7 +663,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      background: var(--navy);
+      background: var(--green);
       color: var(--white);
       font-size: 0.75rem;
       font-weight: 600;
@@ -656,7 +677,7 @@
       transition: background var(--transition);
     }
 
-    .btn-card-primary:hover { background: var(--navy-light); }
+    .btn-card-primary:hover { background: var(--green-light); }
 
     .btn-card-tel {
       display: flex;
@@ -679,14 +700,14 @@
 
     .btn-card-tel:hover {
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
     }
 
     .tel-reveal {
       display: none;
       font-size: 0.78rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--green);
       background: var(--gold-light);
       padding: 0.5rem 1rem;
       border-radius: 2px;
@@ -700,7 +721,7 @@
     /* ── ABOUT ── */
     #nosotros {
       padding: 6rem 5%;
-      background: var(--white);
+      background: var(--off-white);
     }
 
     .about-inner {
@@ -736,7 +757,7 @@
       bottom: -1.5rem;
       right: -1.5rem;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
       border-radius: 2px;
       padding: 1.2rem 1.5rem;
       box-shadow: var(--shadow-md);
@@ -806,7 +827,7 @@
     /* ── CONTACT ── */
     #contacto {
       padding: 6rem 5%;
-      background: var(--navy);
+      background: var(--green);
     }
 
     #contacto .section-title { color: var(--white); }
@@ -832,8 +853,8 @@
     .contact-icon-wrap {
       width: 42px;
       height: 42px;
-      background: rgba(184,150,90,0.12);
-      border: 1px solid rgba(184,150,90,0.3);
+      background: rgba(192,154,82,0.12);
+      border: 1px solid rgba(192,154,82,0.3);
       border-radius: var(--radius);
       display: flex;
       align-items: center;
@@ -867,7 +888,7 @@
       align-items: center;
       gap: 0.6rem;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -884,7 +905,7 @@
     /* FORM */
     .contact-form {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(184,150,90,0.2);
+      border: 1px solid rgba(192,154,82,0.2);
       border-radius: var(--radius);
       padding: 2.5rem;
     }
@@ -926,12 +947,12 @@
       appearance: none;
     }
 
-    .form-group select option { background: var(--navy); }
+    .form-group select option { background: var(--green); }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: rgba(184,150,90,0.6);
+      border-color: rgba(192,154,82,0.6);
       background: rgba(255,255,255,0.09);
     }
 
@@ -945,7 +966,7 @@
     .btn-submit {
       width: 100%;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
       font-family: var(--font-sans);
       font-size: 0.82rem;
       font-weight: 700;
@@ -971,8 +992,8 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #0E1628;
-      border-top: 1px solid rgba(184,150,90,0.15);
+      background: #080F09;
+      border-top: 1px solid rgba(192,154,82,0.15);
       padding: 2.5rem 5%;
       display: flex;
       flex-wrap: wrap;
@@ -1066,7 +1087,7 @@
     .season-item-price {
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--green);
       display: block;
       line-height: 1.3;
     }
@@ -1108,21 +1129,22 @@
       align-items: center;
       gap: 0.6rem;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--green);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 0.85rem 1.4rem;
+      padding: 0.9rem 1.5rem;
       border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(184,150,90,0.45);
-      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(192,154,82,0.50), 0 1px 6px rgba(0,0,0,0.15);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
     }
 
     .float-call:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,150,90,0.55);
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(192,154,82,0.60), 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .float-call svg { width: 16px; height: 16px; }
@@ -1134,9 +1156,9 @@
         display: flex;
         position: absolute;
         top: 72px; left: 0; right: 0;
-        background: var(--navy);
+        background: var(--green);
         padding: 1rem 5%;
-        border-top: 1px solid rgba(184,150,90,0.15);
+        border-top: 1px solid rgba(192,154,82,0.15);
       }
       .navbar-nav.open li { border-bottom: 1px solid rgba(255,255,255,0.06); }
       .navbar-nav.open a { padding: 0.8rem 0; display: block; }
@@ -1161,8 +1183,8 @@
       .float-call { padding: 1rem; border-radius: 50%; width: 52px; height: 52px; justify-content: center; }
 
       .stats-bar-inner { flex-wrap: wrap; }
-      .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(184,150,90,0.12); padding: 1rem; }
-      .stat-item:nth-child(odd) { border-right: 1px solid rgba(184,150,90,0.12); }
+      .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(192,154,82,0.12); padding: 1rem; }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(192,154,82,0.12); }
       .stat-item:nth-last-child(-n+2) { border-bottom: none; }
 
       .season-prices-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1208,7 +1230,7 @@
   <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="hero-bg">
-      <img src="images/propiedad-marbella.webp" alt="" aria-hidden="true" />
+      <img src="images/hero-sunset.jpg" alt="" aria-hidden="true" />
       <div class="hero-bg-overlay"></div>
     </div>
     <div class="hero-pattern"></div>
@@ -1279,7 +1301,7 @@
             <div class="property-badges">
               <span class="badge badge-navy">Alquiler temporal</span>
             </div>
-            <div class="price-current" style="position:absolute;bottom:1rem;right:1rem;background:rgba(26,39,68,0.92);border:1px solid rgba(184,150,90,0.4);border-radius:2px;padding:0.4rem 0.9rem;font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--gold-light);">950€/mes</div>
+            <div class="price-current" style="position:absolute;bottom:1rem;right:1rem;background:rgba(20,50,30,0.92);border:1px solid rgba(192,154,82,0.4);border-radius:2px;padding:0.4rem 0.9rem;font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--gold-light);">950€/mes</div>
           </div>
           <div class="property-body">
             <span class="property-type">Dúplex · Apartamento</span>
@@ -1334,7 +1356,7 @@
               <span class="badge badge-red">Rebajado</span>
               <span class="badge badge-gold">Sin honorarios</span>
             </div>
-            <div style="position:absolute;bottom:1rem;right:1rem;background:rgba(26,39,68,0.92);border:1px solid rgba(184,150,90,0.4);border-radius:2px;padding:0.4rem 0.9rem;text-align:right;">
+            <div style="position:absolute;bottom:1rem;right:1rem;background:rgba(20,50,30,0.92);border:1px solid rgba(192,154,82,0.4);border-radius:2px;padding:0.4rem 0.9rem;text-align:right;">
               <span class="price-old">1.900€/mes</span>
               <span class="price-current">1.800€/mes</span>
             </div>
@@ -1396,7 +1418,7 @@
               <span class="badge badge-gold">Lujo</span>
               <span class="badge badge-navy">Alquiler temporal</span>
             </div>
-            <div style="position:absolute;bottom:1rem;right:1rem;background:rgba(26,39,68,0.92);border:1px solid rgba(184,150,90,0.4);border-radius:2px;padding:0.4rem 0.9rem;">
+            <div style="position:absolute;bottom:1rem;right:1rem;background:rgba(20,50,30,0.92);border:1px solid rgba(192,154,82,0.4);border-radius:2px;padding:0.4rem 0.9rem;">
               <span class="price-current">3.000€/mes</span>
             </div>
           </div>
@@ -1552,7 +1574,7 @@
             </div>
           </div>
         </div>
-        <div class="contact-info-block" style="background:rgba(184,150,90,0.07);border:1px solid rgba(184,150,90,0.2);border-radius:4px;padding:1rem;">
+        <div class="contact-info-block" style="background:rgba(192,154,82,0.07);border:1px solid rgba(192,154,82,0.2);border-radius:4px;padding:1rem;">
           <div>
             <div class="contact-info-label" style="margin-bottom:0.4rem;">Importante</div>
             <div class="contact-info-value" style="font-size:0.82rem;">Las visitas se conciertan <strong style="color:var(--gold);">exclusivamente por teléfono</strong>. No atendemos WhatsApp ni correo electrónico para visitas.</div>
@@ -1643,8 +1665,8 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.style.background = window.scrollY > 60
-        ? 'rgba(26,39,68,0.99)'
-        : 'rgba(26,39,68,0.96)';
+        ? 'rgba(20,50,30,0.99)'
+        : 'rgba(20,50,30,0.96)';
     }, { passive: true });
 
     // Tel reveal
