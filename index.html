@@ -177,13 +177,21 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 30%;
+      animation: ken-burns 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes ken-burns {
+      from { transform: scale(1);   object-position: center 30%; }
+      to   { transform: scale(1.08); object-position: center 40%; }
     }
 
     .hero-bg-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom right, rgba(26,39,68,0.88) 0%, rgba(26,39,68,0.70) 55%, rgba(26,39,68,0.85) 100%);
+      background:
+        linear-gradient(to right, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.60) 60%, rgba(26,39,68,0.30) 100%),
+        linear-gradient(to bottom, rgba(26,39,68,0.4) 0%, transparent 40%, rgba(26,39,68,0.6) 100%);
     }
 
     .hero-pattern {
@@ -221,12 +229,13 @@
 
     .hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
       font-weight: 600;
       color: var(--white);
-      line-height: 1.15;
+      line-height: 1.12;
       margin-bottom: 1.4rem;
       letter-spacing: -0.01em;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.35);
     }
 
     .hero-title em {
@@ -337,6 +346,51 @@
       100% { left: 100%; }
     }
 
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(184,150,90,0.2);
+      padding: 0 5%;
+    }
+
+    .stats-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.4rem 1rem;
+      flex: 1;
+      border-right: 1px solid rgba(184,150,90,0.12);
+      gap: 0.2rem;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
     /* ── DIVIDER ── */
     .gold-divider {
       display: flex;
@@ -431,7 +485,7 @@
 
     .property-image {
       position: relative;
-      height: 220px;
+      height: 260px;
       overflow: hidden;
       background: var(--navy);
     }
@@ -928,12 +982,26 @@
     }
 
     .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .footer-brand-text {
       font-family: var(--font-serif);
       font-size: 1rem;
       color: rgba(255,255,255,0.6);
     }
 
-    .footer-brand span { color: var(--gold); }
+    .footer-brand-text span { color: var(--gold); }
 
     .footer-copy {
       font-size: 0.75rem;
@@ -1091,6 +1159,13 @@
 
       .float-call .call-text { display: none; }
       .float-call { padding: 1rem; border-radius: 50%; width: 52px; height: 52px; justify-content: center; }
+
+      .stats-bar-inner { flex-wrap: wrap; }
+      .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(184,150,90,0.12); padding: 1rem; }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(184,150,90,0.12); }
+      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+      .season-prices-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
     /* ── ANIMATIONS ── */
@@ -1133,7 +1208,7 @@
   <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="hero-bg">
-      <img src="images/propiedad-atico.webp" alt="" aria-hidden="true" />
+      <img src="images/propiedad-marbella.webp" alt="" aria-hidden="true" />
       <div class="hero-bg-overlay"></div>
     </div>
     <div class="hero-pattern"></div>
@@ -1161,6 +1236,28 @@
       Descubrir
     </div>
   </header>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Años de experiencia</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Gestión en exclusiva</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Madrid</span>
+        <span class="stat-label">Austrias · Palacio · Argüelles</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Marbella</span>
+        <span class="stat-label">Costa del Sol · Lujo</span>
+      </div>
+    </div>
+  </div>
 
   <!-- PROPERTIES -->
   <section id="propiedades">
@@ -1512,7 +1609,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
-      <span>Gutiérrez y Pírfano</span> — Inmobiliaria
+      <img src="images/logo.jpg" alt="Logo" class="footer-logo" />
+      <span class="footer-brand-text"><span>Gutiérrez y Pírfano</span> — Inmobiliaria</span>
     </div>
     <p class="footer-copy">© 2025 Gutiérrez y Pírfano. Todos los derechos reservados.</p>
     <ul class="footer-links">
